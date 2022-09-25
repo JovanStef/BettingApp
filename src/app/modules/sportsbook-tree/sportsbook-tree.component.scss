@@ -1,0 +1,17 @@
+aside {
+    grid-area: aside;
+    background-color: #363a4a;
+    color: white;
+    height: calc(100vh - 50px);
+    overflow-y: scroll;
+    @media (max-width: 1200px) { 
+            
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    &.active{
+      display: block;
+    }
+    }
+  }

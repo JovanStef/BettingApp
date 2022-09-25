@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { LayoutObserverService } from 'src/app/shared/services/layout/layout-observer.service';
 import { SportsObserverService } from 'src/app/shared/services/sports/sports-observer.service';
 import { SportsUtilsService } from 'src/app/shared/services/sports/sports-utils.service';
 import { League } from 'src/app/types/sports.types';
@@ -10,7 +11,7 @@ import { League } from 'src/app/types/sports.types';
 })
 export class LeaguesComponent implements OnInit {
   @Input() leagues:League[] = []
-  constructor(private utilsService:SportsUtilsService , private sportsObserverService:SportsObserverService) { }
+  constructor(private utilsService:SportsUtilsService , private sportsObserverService:SportsObserverService , private layoutObserverService:LayoutObserverService) { }
 
   ngOnInit(): void {
     this.setLeagues()
@@ -20,6 +21,7 @@ export class LeaguesComponent implements OnInit {
   }
   getMatches(league:League){
     this.sportsObserverService.setLeague(league)
+    this.layoutObserverService.setShowMenu(false)
   }
 
 }

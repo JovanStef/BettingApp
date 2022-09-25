@@ -14,8 +14,8 @@ export class CountriesComponent implements OnInit {
 
   ngOnInit(): void {
    this.setCountries();
-    
   }
+  
   async setCountries(){
     this.countries = await this.utilsService.sortCountriesAplhabeticaly(this.countries,'asc')
   }

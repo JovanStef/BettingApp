@@ -28,7 +28,7 @@ export class MatchesGridComponent implements OnInit , OnDestroy {
     this.matches = []
     this.league = league
     try {
-      const matches = await this.matchesRequestService.getMatchesByLeagueId(league.id);
+      const matches = await this.matchesRequestService.getMatchesByLeagueId(league?.id);
       await this.loadOddsTableData(matches)
     } catch (error) {
       console.log(error);

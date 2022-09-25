@@ -10,6 +10,7 @@ import { SportsRequestService } from './shared/services/sports/sports-request-se
 import { CountriesComponent } from './modules/sportsbook-tree/countries/countries.component';
 import { LeaguesComponent } from './modules/sportsbook-tree/leagues/leagues.component';
 import { DatetimePipe } from './shared/pipes/datetime.pipe';
+import { HeaderComponent } from './shared/layout/header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { DatetimePipe } from './shared/pipes/datetime.pipe';
     CountriesComponent,
     LeaguesComponent,
     DatetimePipe,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

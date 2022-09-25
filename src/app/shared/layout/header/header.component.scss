@@ -1,0 +1,35 @@
+header {
+    grid-area: header;
+    background-color: #4a3636;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+
+  }
+
+.menu-button{
+    display: none;
+    div {
+        width: 35px;
+        height: 5px;
+        background-color: #9b9b9b;
+        margin: 6px 0;
+      }
+      padding: 0 20px ;
+      @media (max-width: 1200px) {
+        display: block;
+      }
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   height: 100%;
+   h3{
+    flex-grow: 1;
+    @media (max-width: 1200px) {
+        margin-left: -75px;
+      }
+
+   }
+}

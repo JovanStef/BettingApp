@@ -1,3 +1,5 @@
+<aside [class.active]="showMenu">
+
 <ng-container *ngFor="let sport of sportsTree; index as i;">
     <ul>
         <li (click)="toggleShowCountries(i)" [class.active]="showCountries[i]">
@@ -9,3 +11,4 @@
         <app-countries [countries] = 'sport.countries' *ngIf="showCountries[i]"></app-countries>
     </ul>
 </ng-container>
+</aside>
