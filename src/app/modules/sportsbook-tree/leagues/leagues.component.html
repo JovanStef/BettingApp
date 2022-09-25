@@ -1,0 +1,8 @@
+<ng-container *ngFor="let league of leagues; index as i;">
+    <ul class="submenu">
+        <li (click)="getMatches(league)"><div>
+            <span>{{league.name}}</span><span>{{league.total}}</span>
+        </div>
+    </li>
+    </ul>
+</ng-container>

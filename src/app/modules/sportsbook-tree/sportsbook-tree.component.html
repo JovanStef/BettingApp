@@ -1,0 +1,11 @@
+<ng-container *ngFor="let sport of sportsTree; index as i;">
+    <ul>
+        <li (click)="toggleShowCountries(i)" [class.active]="showCountries[i]">
+            <div>
+                <span>{{sport.name}}</span><span>{{sport.total}}</span>
+            </div>
+            <span class="chevron">&rsaquo;</span>
+        </li>
+        <app-countries [countries] = 'sport.countries' *ngIf="showCountries[i]"></app-countries>
+    </ul>
+</ng-container>

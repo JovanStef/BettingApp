@@ -1,0 +1,45 @@
+<ng-container *ngIf="league; else welcomeBlock">
+
+<div class="matches-grid-wrapper" >
+    <h4>{{league.name}}</h4>
+    <ng-container *ngIf="matches.length > 0" >
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td [attr.colspan]="item.odds.length" *ngFor="let item of oddsLayout">{{item.name}}</td>
+                </tr>
+                <tr><td>Date</td>
+                    <td >Pair</td>
+                    <td *ngFor="let odd of oddsLayoutItems">{{odd.name}}</td>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let match of matches ">
+                    <tr *ngIf="match">
+                        <td>{{match.sd | datetime}}</td>
+                        <td>{{match.h}} - {{match.a}}</td>
+                        <td *ngFor="let odd of match.odds">{{odd.value}}</td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</ng-container>
+<ng-container *ngIf="matches.length == 0">
+    <div class="center-center">
+        <p>Sorry no data at the moment</p>
+    </div>
+</ng-container>
+</div>
+</ng-container>
+<ng-template #welcomeBlock>
+    <div class="center-center">
+        <div>
+            <h1>Welcome</h1>
+            <p>Please select a sport</p>
+        </div>
+    </div>
+</ng-template>

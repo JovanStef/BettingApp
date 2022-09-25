@@ -1,0 +1,33 @@
+#layout {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "aside main";
+  grid-template-columns: minmax(300px,auto) 1fr;
+  grid-template-rows: 50px 1fr;
+  min-height: 100vh;
+  & > header {
+    grid-area: header;
+    background-color: #4a3636;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  & > aside {
+    grid-area: aside;
+    background-color: #363a4a;
+    color: white;
+    height: calc(100vh - 50px);
+    overflow-y: scroll;
+  }
+  & > main {
+    grid-area: main;
+    background-color: #ffffff;
+    height: calc(100vh - 50px);
+    overflow-y: scroll;
+  }
+
+}

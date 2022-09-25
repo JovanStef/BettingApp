@@ -1,0 +1,11 @@
+<ng-container *ngFor="let country of countries; index as i;">
+    <ul class="submenu">
+        <li (click)="toggleShowLeagues(i)" [class.active]="showLeagues[i]">
+        <div>
+            <span>{{country.name}}</span> <span>{{country.total}}</span>
+        </div>
+        <span class="chevron">&rsaquo;</span>
+        </li>
+        <app-leagues [leagues]="country.leagues" *ngIf="showLeagues[i]"></app-leagues>
+    </ul>
+</ng-container>
